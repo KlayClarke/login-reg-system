@@ -18,24 +18,24 @@ bool IsLoggedIn()
 
     if (entered_username == correct_username && entered_password == correct_password)
     {
-        cout << "Access Granted";
+        cout << "Access Granted\n";
         return true;
     }
     else
     {
         if (entered_username == correct_username && entered_password != correct_password)
         {
-            cout << "Incorrect password";
+            cout << "Incorrect password\n\n";
         }
 
         else if (entered_username != correct_username && entered_password == correct_password)
         {
-            cout << "Incorrect username";
+            cout << "Incorrect username\n\n";
         }
 
         else 
         {
-            cout << "Access Denied";
+            cout << "Incorrect username and password\n\n";
         }
 
         return false;
@@ -45,7 +45,10 @@ bool IsLoggedIn()
 
 int main()
 {
-    IsLoggedIn();
+    while (!IsLoggedIn())
+    {
+        IsLoggedIn();
+    }
 
     return 0;
 }
