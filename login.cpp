@@ -21,20 +21,17 @@ bool IsLoggedIn()
         cout << "Access Granted";
         return true;
     }
-    
+    else
+    {
+        cout << "Access Denied";
+        return false;
+    }
+
 }
 
 int main()
 {
     IsLoggedIn();
-    // Initialize variables for username and password - as username and password strings
 
-    // Take user input for username
-
-    // Take user input for password
-
-    // If user input for username and password is equal to username and password strings, print "Access Granted"
-
-    // Else, print "Access Denied"
     return 0;
 }
