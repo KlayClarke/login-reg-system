@@ -47,18 +47,26 @@ int main()
     if (choice == 1) // if user chose to register
     {
         string username, password;
-        // allow user to create account using unique username, and a password
-        cout << "\nenter a username: ";
+        
+        cout << "\nenter a username: "; // prompt user to enter unique username
         cin >> username;
-        cout << "\nenter a password: ";
-        cin >> password;
-        ofstream file (username + ".txt"); //create txt file in working directory titled '{username}.txt'
-        file << username << endl << password; //write user's username to one line and password to another line in txt file
-        file.close(); //close text file
 
+        ifstream file (username + ".txt"); //check to see if username exists in 'database'
+        if (file) // if username exists
+        {
+            cout << "Account with this username already exists!\n";
+        }
+        else // if not, allow user to continue registration
+        {
+            cout << "\nenter a password: "; // prompt user to enter password
+            cin >> password;
+
+            ofstream file (username + ".txt"); //create txt file in working directory titled '{username}.txt'
+            file << username << endl << password; //write user's username to one line and password to another line in txt file
+            file.close(); //close text file
+        }
         main();
     }
-
     else if (choice == 2) // if user chose to login
     {
         bool status = IsLoggedIn(); // IsLoggedIn is returning either true or false - depends on whether user passed correct values through
@@ -73,7 +81,4 @@ int main()
     }
     return 0;
 }
-
-// what about for preexisting usernames????????
-
-// when user attempts to create new account with existing username, preexisting account overridden completely - stop this
+// once user logged in, give option to logout - if user chooses to logout, give option to either register or login
