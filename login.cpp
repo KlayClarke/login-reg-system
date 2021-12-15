@@ -48,6 +48,8 @@ int main()
     while (!IsLoggedIn())
     {
         IsLoggedIn();
+        cin.clear();
+        cin.ignore();
     }
 
     return 0;
