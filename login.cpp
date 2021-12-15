@@ -1,4 +1,8 @@
 #include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
 
 int main()
 {
@@ -11,4 +15,5 @@ int main()
     // If user input for username and password is equal to username and password strings, print "Access Granted"
 
     // Else, print "Access Denied"
+    return 0;
 }
